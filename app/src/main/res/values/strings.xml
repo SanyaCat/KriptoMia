@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KriptoMia</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="decrypt">Decrypt</string>
+    <string name="paste">Paste</string>
+    <string name="copy">Copy</string>
+    <string name="key">Key</string>
+    <string name="encrypt_text">Encrypt text</string>
+    <string name="decrypt_code">Decrypt Code</string>
+    <string name="clear">Clear</string>
+</resources>

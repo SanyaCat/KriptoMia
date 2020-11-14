@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnEncrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimary"
+        android:onClick="onBtnEncryptClick"
+        android:text="@string/encrypt"
+        app:layout_constraintBottom_toTopOf="@+id/ll2"
+        app:layout_constraintEnd_toStartOf="@id/btnDecrypt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimaryDark"
+        android:onClick="onBtnDecryptClick"
+        android:text="@string/decrypt"
+        app:layout_constraintBottom_toTopOf="@+id/ll2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnEncrypt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/ll2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/ll3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEncrypt">
+
+        <EditText
+            android:id="@+id/edtInput"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/colorAccent"
+            android:hint="@string/encrypt_text"
+            android:gravity="top"
+            android:lines="5" />
+
+        <ImageButton
+            android:id="@+id/btnInputCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/edtInput"
+            android:layout_toEndOf="@id/edtInput"
+            android:onClick="onBtnInputCopyClick"
+            android:src="@android:drawable/ic_menu_save"
+            android:text="@string/copy"
+            android:contentDescription="@string/copy"/>
+
+        <ImageButton
+            android:id="@+id/btnInputPaste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btnInputCopy"
+            android:layout_toEndOf="@id/btnInputCopy"
+            android:contentDescription="@string/paste"
+            android:onClick="onBtnInputPasteClick"
+            android:src="@android:drawable/ic_menu_upload"
+            android:text="@string/paste" />
+
+        <ImageButton
+            android:id="@+id/btnInputClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/edtInput"
+            android:layout_toEndOf="@id/edtInput"
+            android:layout_below="@id/btnInputPaste"
+            android:contentDescription="@string/clear"
+            android:onClick="onBtnInputClearClick"
+            android:src="@android:drawable/ic_menu_delete"
+            android:text="@string/clear" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ll3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll2">
+
+        <EditText
+            android:id="@+id/edtOutput"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/colorAccent"
+            android:hint="@string/decrypt_code"
+            android:gravity="top"
+            android:lines="5" />
+
+        <ImageButton
+            android:id="@+id/btnOutputCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/edtOutput"
+            android:layout_toEndOf="@id/edtOutput"
+            android:onClick="onBtnOutputCopyClick"
+            android:src="@android:drawable/ic_menu_save"
+            android:layout_gravity="end"
+            android:text="@string/copy"
+            android:contentDescription="@string/copy" />
+
+        <ImageButton
+            android:id="@+id/btnOutputPaste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btnOutputCopy"
+            android:layout_toEndOf="@id/btnOutputCopy"
+            android:onClick="onBtnOutputPasteClick"
+            android:src="@android:drawable/ic_menu_upload"
+            android:layout_gravity="end"
+            android:text="@string/paste"
+            android:contentDescription="@string/paste" />
+
+        <ImageButton
+            android:id="@+id/btnOutputClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/edtOutput"
+            android:layout_toEndOf="@id/edtOutput"
+            android:layout_below="@id/btnOutputPaste"
+            android:contentDescription="@string/clear"
+            android:onClick="onBtnOutputClearClick"
+            android:src="@android:drawable/ic_menu_delete"
+            android:text="@string/clear" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edtKey"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:textColor="@color/colorPrimary"
+        android:hint="@string/key"
+        android:layout_marginBottom="220dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll3"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
